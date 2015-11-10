@@ -1,0 +1,3 @@
+[submodule "mod/ipfs-cs"]
+	path = mod/ipfs-cs
+	url = https://github.com/CompulsiveCoder/ipfs-cs.git
