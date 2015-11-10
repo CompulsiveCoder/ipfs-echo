@@ -1,1 +1,1 @@
-xbuild src/ipfs-echo.sln /p:Configuration=Release
+xbuild src/ipfs.echo.sln /p:Configuration=Release

@@ -61,12 +61,12 @@ namespace ipfsecho.Core
 		/// <param name='arguments'></param>
 		public virtual Process Start (string command, string arguments)
 		{
-			Console.WriteLine ("");
-			Console.WriteLine ("--------------------");
-			Console.WriteLine ("");
-			Console.WriteLine ("Starting process:");
-			Console.WriteLine (command + " " + arguments);
-			Console.WriteLine ("");
+			//Console.WriteLine ("");
+			//Console.WriteLine ("--------------------");
+			//Console.WriteLine ("");
+			//Console.WriteLine ("Starting process:");
+			//Console.WriteLine (command + " " + arguments);
+			//Console.WriteLine ("");
 
 			// If the command has an extension (and is therefore an actual file)
 			if (Path.GetExtension (command) != String.Empty) {

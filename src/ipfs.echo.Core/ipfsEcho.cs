@@ -12,6 +12,9 @@ namespace ipfsecho.Core
 
 		public string Echo(string text)
 		{
+			Console.WriteLine ("ipfs-echo: \"" + text + "\"");
+			Console.WriteLine ("");
+
 			var originalDirectory = Environment.CurrentDirectory;
 
 			var tmpDir = Path.GetFullPath (".tmp");
