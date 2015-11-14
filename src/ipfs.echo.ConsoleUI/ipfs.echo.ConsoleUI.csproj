@@ -27,8 +27,9 @@
     <OutputPath>..\..\bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Externalconsole>true</Externalconsole>
     <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+    <Commandlineparameters>"Hello world!" -h</Commandlineparameters>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

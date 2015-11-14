@@ -9,6 +9,9 @@ namespace ipfsecho.ConsoleUI
 		{
 			var arguments = new Arguments (args);
 
+			if (arguments.KeylessArguments.Length == 0)
+				throw new ArgumentException ("Some text must be provided as an argument.");
+
 			var text = arguments.KeylessArguments [0];
 
 			var hashOnly = arguments.Contains ("h")

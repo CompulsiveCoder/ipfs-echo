@@ -6,14 +6,18 @@ namespace ipfsecho.Core
 {
 	public class ipfsEcho
 	{
+		public bool IsVerbose = false;
+
 		public ipfsEcho ()
 		{
 		}
 
 		public string Echo(string text)
 		{
-			Console.WriteLine ("ipfs-echo: \"" + text + "\"");
-			Console.WriteLine ("");
+			if (IsVerbose) {
+				Console.WriteLine ("ipfs-echo: \"" + text + "\"");
+				Console.WriteLine ("");
+			}
 
 			var originalDirectory = Environment.CurrentDirectory;
 
