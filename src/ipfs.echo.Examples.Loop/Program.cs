@@ -18,11 +18,15 @@ namespace ipfs.echo.Examples.Loop
 			for (int i = 0; i < 10; i++) {
 				var temperature = sensor.GetTemperature (location);
 
-				Console.WriteLine ("Temperature: " + temperature + "c");
+				var line = "Temperature: " + temperature + "c";
 
-				var hash = echo.Echo("Hello world! -- " + temperature);
+				Console.WriteLine (line);
 
-				Thread.Sleep (5000);
+				var hash = echo.Echo(line);
+
+				Console.WriteLine (hash);
+
+				Thread.Sleep (10000);
 			}
 		}
 	}

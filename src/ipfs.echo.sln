@@ -33,6 +33,6 @@ Global
 		{DAE9E34D-EF06-4AEB-AB17-35860767E862}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ipfs.echo.ConsoleUI\ipfs.echo.ConsoleUI.csproj
+		StartupItem = ipfs.echo.Examples.Loop\ipfs.echo.Examples.Loop.csproj
 	EndGlobalSection
 EndGlobal

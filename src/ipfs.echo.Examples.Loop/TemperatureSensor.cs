@@ -28,24 +28,8 @@ namespace ipfs.echo.Examples.Loop
 			}    
 
 			dynamic jo = JObject.Parse(results);    
-			var items = jo.query.results.channel.item.condition;    
-			var code = items.code;    
-			var temp = items.temp;    
-			var text = items.text;  
-			var date = items.date;
-
-			/*var forecast = jo.query.results.channel.item.forecast;
-
-			foreach (var f in forecast) {
-				Console.WriteLine ("Date: " + f.day + " " + f.date);
-				Console.WriteLine ("Temp: " + f.low + "c-" + f.high + "c");
-				Console.WriteLine ();
-			}*/
-
-
-			Console.WriteLine(date + " - " + code + " - " + temp + "c - " + text);    
-
-			//Console.Read();   
+			var items = jo.query.results.channel.item.condition;   
+			var temp = items.temp;  
 
 			return temp;
 		}
