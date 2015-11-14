@@ -17,7 +17,7 @@ Intended to streamline the process of posting small chunks of data to ipfs, such
 The -h argument tells ipfs-echo to only output the hash, with other output details excluded.
 This hash can be used to access the data via ipfs.
 
-Example output
+Example output:
 
   QmQzCQn4puG4qu8PVysxZmscmQ5vT1ZXpqo7f58Uh9QfyY
 
@@ -25,6 +25,6 @@ After using ipfs-echo go to:
 
   http://ipfs.io/ipfs/[hash]
   
-Example:
+Example ipfs URL:
 
   http://ipfs.io/ipfs/QmQzCQn4puG4qu8PVysxZmscmQ5vT1ZXpqo7f58Uh9QfyY
