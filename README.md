@@ -2,15 +2,15 @@
 Echos text into files on ipfs then outputs the hash.
 Intended to streamline the process of posting small chunks of data to ipfs, such as from an arduino project.
 
-Setup
+# Setup
 
   sh init.sh
 
-Build
+# Build
 
   sh build.sh
 
-Usage
+# Usage
 
   mono ipfs-echo.exe "Hello world!" -h
   
