@@ -14,6 +14,11 @@ namespace ipfsecho.Core
 
 		public string Echo(string text)
 		{
+			return Echo (text, true);
+		}
+
+		public string Echo(string text, bool ipnsPublish)
+		{
 			if (IsVerbose) {
 				Console.WriteLine ("ipfs-echo: \"" + text + "\"");
 				Console.WriteLine ("");
@@ -40,7 +45,11 @@ namespace ipfsecho.Core
 
 			var ifps = new ipfsClient ();
 
+
 			var hash = ifps.AddFile (tmpFileName);
+
+			if (ipnsPublish)
+				hash = ifps.Publish (hash);
 
 			Directory.SetCurrentDirectory (originalDirectory);
 
