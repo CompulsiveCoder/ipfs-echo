@@ -14,19 +14,18 @@ namespace ipfs.echo.Examples.Loop
 
 			var sensor = new TemperatureSensor ();
 
-			// TODO: Change to loop forever
-			for (int i = 0; i < 10; i++) {
+			while (true){
 				var temperature = sensor.GetTemperature (location);
 
-				var line = "Temperature: " + temperature + "c";
+				var line = String.Format("Date: {0}; Temperature: {1}c;", DateTime.Now.ToString(), temperature);
 
 				Console.WriteLine (line);
 
-				var hash = echo.Echo(line);
+				var hash = echo.Echo(line, "TemperatureData");
 
 				Console.WriteLine (hash);
 
-				Thread.Sleep (10000);
+				Thread.Sleep (30000);
 			}
 		}
 	}

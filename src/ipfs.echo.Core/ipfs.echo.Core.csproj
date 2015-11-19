@@ -32,6 +32,9 @@
     <Reference Include="ipfs.Core">
       <HintPath>..\..\mod\ipfs-cs\bin\Release\ipfs.Core.dll</HintPath>
     </Reference>
+    <Reference Include="ipfs.Managed">
+      <HintPath>..\..\mod\ipfs-cs\bin\Release\ipfs.Managed.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

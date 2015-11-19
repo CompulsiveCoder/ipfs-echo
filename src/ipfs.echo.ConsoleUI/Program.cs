@@ -25,7 +25,7 @@ namespace ipfsecho.ConsoleUI
 
 			var showLink = arguments.Contains ("link");
 
-			var ipnsPublish = arguments.Contains ("ipns");
+			var publishKey = arguments["publish"];
 
 			if (longOutput)
 			{
@@ -37,7 +37,7 @@ namespace ipfsecho.ConsoleUI
 
 			var echo = new ipfsEcho ();
 
-			var hash = echo.Echo (text, ipnsPublish);
+			var hash = echo.Echo (text, publishKey, false);
 
 			if (hashOnly) {
 				Console.WriteLine (hash);
@@ -45,7 +45,7 @@ namespace ipfsecho.ConsoleUI
 				Console.WriteLine ("Hash: " + hash);
 			}
 
-			var protocol = (ipnsPublish ? "ipns" : "ipfs");
+			var protocol = (!String.IsNullOrEmpty(publishKey) ? "ipns" : "ipfs");
 
 			if (showLink) {
 				var link = "URL: https://ipfs.io/" + protocol + "/" + hash;

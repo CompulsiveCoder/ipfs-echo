@@ -1,11 +1,12 @@
 ﻿using System;
 using NUnit.Framework;
 using System.Threading;
+using ipfs.Core.Tests;
 
 namespace ipfsecho.Core.Tests
 {
 	[TestFixture]
-	public class ipfsEchoTestFixture
+	public class ipfsEchoTestFixture : BaseTestFixture
 	{
 		[Test]
 		public void Test_Echo()
@@ -15,45 +16,32 @@ namespace ipfsecho.Core.Tests
 		}
 
 		[Test]
-		public void Test_Echo_IpnsPublish()
+		public void Test_Echo_Publish()
 		{
 			var echo = new ipfsEcho ();
 			echo.IsVerbose = true;
+				
+			var firstString = "one";
 
-			var beforeString = Guid.NewGuid().ToString();
+			var subFolderName = Guid.NewGuid().ToString();
 
-			var hash = echo.Echo (beforeString, true);
+			var peerId = echo.Echo (firstString, subFolderName);
 
-			Console.WriteLine(hash);
+			Console.WriteLine(peerId);
 
-			// Sleep for a minute to let changes propagate (hopefully this can be removed once the system gets faster)
-			//Thread.Sleep (60000);
+			var fileChecker = new ipfsFileChecker ();
 
-			CheckTestFile ("ipns", hash, beforeString);
+			var relativeFilePath = subFolderName + "/data.txt";
 
-			var afterString = Guid.NewGuid().ToString();
+			fileChecker.CheckTestFile ("ipns", peerId, relativeFilePath, firstString);
 
-			hash = echo.Echo (afterString, true);
+			var secondString = "two";
 
-			Console.WriteLine(hash);
+			peerId = echo.Echo (secondString, subFolderName);
 
-			// Sleep for a while to let changes propagate (hopefully this can be removed once the system gets faster)
-			Thread.Sleep (10000);
+			var combinedString = firstString + Environment.NewLine + secondString;
 
-			CheckTestFile ("ipns", hash, afterString);
-		}
-
-		public void CheckTestFile(string protocol, string hash, string contents)
-		{
-			var starter = new ProcessStarter ();
-
-			//var url = "http://ipfs.io/" + protocol + "/" + hash;
-
-			var url = "http://localhost:8080/" + protocol + "/" + hash;
-
-			starter.Start ("curl -s " + url);
-
-			Assert.IsTrue(starter.Output.Trim().EndsWith (contents));
+			fileChecker.CheckTestFile ("ipns", peerId, relativeFilePath, combinedString);
 		}
 	}
 }
