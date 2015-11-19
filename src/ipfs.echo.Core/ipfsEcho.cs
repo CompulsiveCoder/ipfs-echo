@@ -89,6 +89,11 @@ namespace ipfsecho.Core
 
 			var peerId = managedClient.Publish (hash);
 
+			var url = "{0}/ipns/" + peerId + "/" + ipnsSubFolder + "/data.txt";
+
+			Console.WriteLine (String.Format (url, "http://localhost:8080"));
+			Console.WriteLine (String.Format (url, "https://ipfs.io"));
+
 			return peerId;
 		}
 	}
