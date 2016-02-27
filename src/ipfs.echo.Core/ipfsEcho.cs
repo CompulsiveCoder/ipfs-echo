@@ -67,6 +67,7 @@ namespace ipfsecho.Core
 			File.WriteAllText (tmpFile, text);
 
 			var client = new ipfsClient ();
+
 			var hash = client.AddFile (tmpFileName);
 
 			Directory.SetCurrentDirectory (originalDirectory);
@@ -79,6 +80,7 @@ namespace ipfsecho.Core
 		public string EchoPublish(string text, string ipnsSubFolder, bool replaceContent)
 		{
 			var managedClient = new ipfsManagedClient ();
+			managedClient.IsVerbose = IsVerbose;
 
 			var hash = "";
 

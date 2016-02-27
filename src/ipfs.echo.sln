@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ipfs.echo.Core.Tests", "ipf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ipfs.echo.Examples.Loop", "ipfs.echo.Examples.Loop\ipfs.echo.Examples.Loop.csproj", "{DAE9E34D-EF06-4AEB-AB17-35860767E862}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ipfs.echo.WWW", "ipfs.echo.WWW\ipfs.echo.WWW.csproj", "{EFA8F4A1-364E-4055-9604-F6E5EC51401A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -31,8 +33,12 @@ Global
 		{DAE9E34D-EF06-4AEB-AB17-35860767E862}.Debug|x86.Build.0 = Debug|x86
 		{DAE9E34D-EF06-4AEB-AB17-35860767E862}.Release|x86.ActiveCfg = Release|x86
 		{DAE9E34D-EF06-4AEB-AB17-35860767E862}.Release|x86.Build.0 = Release|x86
+		{EFA8F4A1-364E-4055-9604-F6E5EC51401A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EFA8F4A1-364E-4055-9604-F6E5EC51401A}.Debug|x86.Build.0 = Debug|Any CPU
+		{EFA8F4A1-364E-4055-9604-F6E5EC51401A}.Release|x86.ActiveCfg = Release|Any CPU
+		{EFA8F4A1-364E-4055-9604-F6E5EC51401A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ipfs.echo.Examples.Loop\ipfs.echo.Examples.Loop.csproj
+		StartupItem = ipfs.echo.WWW\ipfs.echo.WWW.csproj
 	EndGlobalSection
 EndGlobal
