@@ -1,1 +1,3 @@
-curl https://raw.githubusercontent.com/CompulsiveCoder/ipfs-echo/master/init-build-run.sh | sh
+git clone https://github.com/CompulsiveCoder/ipfs-echo.git
+cd ipfs-echo
+sh init-build-run.sh
