@@ -1,6 +1,5 @@
 # ipfs-echo
-Echos text into files on ipfs then outputs the hash.
-Intended to streamline the process of posting small chunks of data to ipfs, such as from an arduino project.
+Streamlines the process of posting small chunks of data to ipfs, such as from an arduino project.
 
 # One Line Download and Run
 curl https://raw.githubusercontent.com/CompulsiveCoder/ipfs-echo/master/run-from-github.sh | sh
