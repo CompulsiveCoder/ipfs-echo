@@ -1,5 +1,7 @@
+DIR=$PWD
+
 cd mod/ipfs-cs/
 sh build.sh
-cd ../..
+cd $DIR
 
 xbuild src/ipfs.echo.sln /p:Configuration=Release
