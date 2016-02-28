@@ -9,7 +9,8 @@ namespace ipfs.echo.WWW
 	public partial class Echo : System.Web.UI.Page
 	{
 		public string TextData = "";
-		public string DeviceKey = "";
+		public string FolderName = "";
+		public string FileName = "";
 		public bool Overwrite;
 
 		public bool DidPublish;
@@ -24,11 +25,13 @@ namespace ipfs.echo.WWW
 
 		private void Page_Load(object sender, EventArgs e)
 		{
-			TextData = Request.QueryString ["t"];
+			TextData = Request.QueryString ["text"];
 
-			DeviceKey = Request.QueryString ["d"];
+			FolderName = Request.QueryString ["folder"];
 
-			Overwrite = Convert.ToBoolean(Request.QueryString ["o"]);
+			FileName = Request.QueryString ["file"];
+
+			Overwrite = Convert.ToBoolean(Request.QueryString ["overwrite"]);
 
 			if (!String.IsNullOrEmpty (TextData)) {
 				DidPublish = true;
@@ -36,15 +39,15 @@ namespace ipfs.echo.WWW
 				var echo = new ipfsEcho ();
 				echo.IsVerbose = true;
 
-				if (String.IsNullOrEmpty (DeviceKey)) {
+				if (String.IsNullOrEmpty (FolderName)) {
 					var hash = echo.Echo (TextData);
 
 					CreateIpfsUrls (hash);
 
 				} else {
-					var peerId = echo.Echo (TextData, DeviceKey, Overwrite);
+					var peerId = echo.Echo (TextData, FolderName, FileName, Overwrite);
 
-					CreateIpnsUrls (peerId, DeviceKey);
+					CreateIpnsUrls (peerId, FolderName, FileName);
 				}
 			}
 		}
@@ -57,9 +60,9 @@ namespace ipfs.echo.WWW
 			IpfsUrl = String.Format (UrlFormat, IpfsUrlStart, protocol, hash);
 		}
 
-		private void CreateIpnsUrls(string peerId, string deviceKey)
+		private void CreateIpnsUrls(string peerId, string folderName, string fileName)
 		{
-			var relativePath = peerId + "/" + deviceKey + "/data.txt";
+			var relativePath = peerId + "/" + folderName + "/" + fileName;
 
 			var protocol = "ipns";
 

@@ -15,15 +15,20 @@ namespace ipfsecho.Core
 
 		public string Echo(string text)
 		{
-			return Echo (text, String.Empty, false);
+			return Echo (text, String.Empty, String.Empty, false);
 		}
 
 		public string Echo(string text, string subFolderName)
 		{
-			return Echo (text, subFolderName, false);
+			return Echo (text, subFolderName, "data.txt", false);
 		}
 
-		public string Echo(string text, string subFolderName, bool replaceContent)
+		public string Echo(string text, string subFolderName, string fileName)
+		{
+			return Echo (text, subFolderName, fileName, false);
+		}
+
+		public string Echo(string text, string subFolderName, string fileName, bool replaceContent)
 		{
 			if (IsVerbose) {
 				Console.WriteLine ("ipfs-echo: \"" + text + "\"");
@@ -39,7 +44,7 @@ namespace ipfsecho.Core
 			if (!doPublish) {
 				hash = EchoBasic (text);
 			} else {
-				hash = EchoPublish (text, subFolderName, replaceContent);
+				hash = EchoPublish (text, subFolderName, fileName, replaceContent);
 			}
 
 			return hash;
@@ -77,7 +82,7 @@ namespace ipfsecho.Core
 			return hash;
 		}
 
-		public string EchoPublish(string text, string ipnsSubFolder, bool replaceContent)
+		public string EchoPublish(string text, string ipnsSubFolder, string fileName, bool replaceContent)
 		{
 			var managedClient = new ipfsManagedClient ();
 			managedClient.IsVerbose = IsVerbose;
@@ -85,9 +90,9 @@ namespace ipfsecho.Core
 			var hash = "";
 
 			if (replaceContent)
-				hash = managedClient.SetData (ipnsSubFolder, text);
+				hash = managedClient.Set (ipnsSubFolder, fileName, text);
 			else
-				hash = managedClient.AppendData (ipnsSubFolder, text, true);
+				hash = managedClient.Append (ipnsSubFolder, fileName, text, true);
 
 			var peerId = managedClient.Publish (hash);
 

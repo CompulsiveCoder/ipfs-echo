@@ -11,7 +11,8 @@
 		<% if (DidPublish){ %>
 		<div>The provided text has been published to ipfs.</div>
 		<div>Text: <%= TextData %></div>
-		<div>Device key: <%= DeviceKey %></div>
+		<div>Folder: <%= FolderName %></div>
+		<div>File: <%= FileName %></div>
 		<div>&nbsp;</div>
 		<div>You can acces the data via the following links:</div>
 		<div><a href='<%= LocalUrl %>'><%= LocalUrl %></a></div>

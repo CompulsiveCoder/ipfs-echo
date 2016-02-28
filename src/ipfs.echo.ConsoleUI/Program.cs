@@ -29,6 +29,11 @@ namespace ipfsecho.ConsoleUI
 
 			var publishKey = arguments["publish"];
 
+			var fileName = arguments["fileName"];
+
+			if (String.IsNullOrEmpty (fileName))
+				fileName = "data.txt";
+
 			if (longOutput)
 			{
 				if (showLink == false)
@@ -39,7 +44,7 @@ namespace ipfsecho.ConsoleUI
 
 			var echo = new ipfsEcho ();
 
-			var hash = echo.Echo (text, publishKey, replace);
+			var hash = echo.Echo (text, publishKey, fileName, replace);
 
 			// TODO: Clean up the output code. Currently the ipfsEcho class outputs during publish, but this console outputs during standard echo.
 			// The location of the output code should be more consistent

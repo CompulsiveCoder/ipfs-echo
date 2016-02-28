@@ -10,7 +10,8 @@
 		<h1>ipfs-echo</h1>
 		<div>To publish text data to ipfs; enter the text, the name/key/id of the device, and click submit.</div>
 		<div>Text: <asp:TextBox runat="server" id="TextData"/></div>
-		<div>Device key: <asp:TextBox runat="server" id="DeviceKey"/> (optional)</div>
+		<div>Folder name: <asp:TextBox runat="server" id="FolderName"/> (optional)</div>
+		<div>File name: <asp:TextBox runat="server" id="FileName"/> (optional)</div>
 		<div>Overwrite: <asp:CheckBox runat="server" id="Overwrite"/> (leave unchecked to append)</div>
 		<div><asp:Button runat="server" id="GoButton" OnClick="GoButton_Click" Text="Submit" /></div>
 

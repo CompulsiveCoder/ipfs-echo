@@ -17,7 +17,9 @@ namespace ipfs.echo.WWW {
 		
 		protected System.Web.UI.WebControls.TextBox TextData;
 		
-		protected System.Web.UI.WebControls.TextBox DeviceKey;
+		protected System.Web.UI.WebControls.TextBox FolderName;
+		
+		protected System.Web.UI.WebControls.TextBox FileName;
 		
 		protected System.Web.UI.WebControls.CheckBox Overwrite;
 		

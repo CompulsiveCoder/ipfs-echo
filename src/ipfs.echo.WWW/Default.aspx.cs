@@ -9,7 +9,7 @@ namespace ipfs.echo.WWW
 	{
 		public void GoButton_Click (object sender, EventArgs args)
 		{
-			var url = String.Format ("Echo.aspx?t={0}&d={1}&o={2}", HttpUtility.UrlEncode(TextData.Text), HttpUtility.UrlEncode(DeviceKey.Text), Overwrite.Checked.ToString());
+			var url = String.Format ("Echo.aspx?text={0}&folder={1}&file={2}&overwrite={3}", HttpUtility.UrlEncode(TextData.Text), HttpUtility.UrlEncode(FolderName.Text), HttpUtility.UrlEncode(FileName.Text), Overwrite.Checked.ToString());
 
 			Response.Redirect (url);
 		}
