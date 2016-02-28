@@ -1,12 +1,14 @@
 sudo apt-get update
 sudo apt-get install -y mono-runtime mono-xsp4
 
+git submodule update --init --recursive
+
+DIR=$PWD
+
 cd mod/ipfs-cs/
 sh init.sh
-cd ../..
+cd $DIR
 
 cd lib
 sh get-libs.sh
-cd ..
-
-git submodule update --init --recursive
+cd $DIR
