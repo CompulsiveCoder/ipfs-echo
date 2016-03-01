@@ -1,7 +1,10 @@
-#sudo apt-get update
+#ssudo apt-get update
 sudo apt-get install -y git mono-runtime mono-xsp4
 
 git submodule update --init --recursive
+
+wget -q https://raw.githubusercontent.com/ipfs/install-go-ipfs/master/install-ipfs.sh
+sudo sh install-ipfs.sh
 
 DIR=$PWD
 
