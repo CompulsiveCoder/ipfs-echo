@@ -1,5 +1,5 @@
 #ssudo apt-get update
-sudo apt-get install -y git mono-runtime mono-xsp4
+sudo apt-get install -y wget git mono-runtime mono-xsp4
 
 git submodule update --init --recursive
 
