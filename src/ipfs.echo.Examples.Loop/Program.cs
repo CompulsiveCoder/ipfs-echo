@@ -21,7 +21,7 @@ namespace ipfs.echo.Examples.Loop
 
 				Console.WriteLine (line);
 
-				var hash = echo.Echo(line, "TemperatureData");
+				echo.Echo(line, "TemperatureData");
 
 				Thread.Sleep (30000);
 
