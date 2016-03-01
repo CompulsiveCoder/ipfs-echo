@@ -1,5 +1,5 @@
 DIR=src/ipfs.echo.WWW/ipfs-data
 mkdir $DIR
-cd $DIRs
+cd $DIR
 ipfs init -f
 ipfs daemon
