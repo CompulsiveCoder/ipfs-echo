@@ -3,5 +3,5 @@ sudo: required
 language: c#
 
 script:
-- apt-get update
+- sudo apt-get update
 - curl https://raw.githubusercontent.com/CompulsiveCoder/ipfs-echo/master/run-from-github.sh | sh
