@@ -33,7 +33,8 @@ namespace ipfsecho.Core
 			if (IsVerbose) {
 				Console.WriteLine ("ipfs-echo: \"" + text + "\"");
 				Console.WriteLine ("");
-				Console.WriteLine ("Sub folder name: \"" + subFolderName + "\"");
+				Console.WriteLine ("Folder name: \"" + subFolderName + "\"");
+				Console.WriteLine ("File name: \"" + fileName + "\"");
 				Console.WriteLine ("");
 			}
 
@@ -96,7 +97,7 @@ namespace ipfsecho.Core
 
 			var peerId = managedClient.Publish (hash);
 
-			var url = "{0}/ipns/" + peerId + "/" + ipnsSubFolder + "/data.txt";
+			var url = "{0}/ipns/" + peerId + "/" + ipnsSubFolder + "/" + fileName;
 
 			Console.WriteLine (String.Format (url, "http://localhost:8080"));
 			Console.WriteLine (String.Format (url, "https://ipfs.io"));

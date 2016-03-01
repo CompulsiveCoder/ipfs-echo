@@ -1,9 +1,10 @@
-sudo apt-get update
-sudo apt-get install -y mono-complete mono-xsp4
+sudo apt-get install -y wget git unzip mono-complete mono-xsp4
 
+wget -q https://raw.githubusercontent.com/ipfs/install-go-ipfs/master/install-ipfs.sh
+sudo sh install-ipfs.sh
+
+cd $DIR
 git submodule update --init --recursive
-
-DIR=$PWD
 
 cd mod/ipfs-cs/
 sh init.sh
