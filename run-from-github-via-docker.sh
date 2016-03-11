@@ -1,1 +1,1 @@
-docker run -it ubuntu /bin/bash -c "sudo apt-get update && sudo apt-get -y install curl git && curl https://raw.githubusercontent.com/CompulsiveCoder/ipfs-echo/master/run-from-github.sh | sh"
+docker run -it compulsivecoder/ubuntu-mono-ipfs /bin/bash -c "curl https://raw.githubusercontent.com/CompulsiveCoder/ipfs-echo/master/run-from-github.sh | sh"
