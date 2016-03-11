@@ -1,10 +1,10 @@
-sudo apt-get install -y wget git unzip mono-complete mono-xsp4
+DIR=$PWD
 
+# TODO Move this to the prepare script (and create a corresponding docker image for testing)
 wget -q https://raw.githubusercontent.com/ipfs/install-go-ipfs/master/install-ipfs.sh
 sudo sh install-ipfs.sh
 
 cd $DIR
-git submodule update --init --recursive
 
 cd mod/ipfs-cs/
 sh init.sh
