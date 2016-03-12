@@ -15,7 +15,8 @@ namespace ipfsecho.Core.Tests
 			Console.WriteLine(echo.Echo ("Hello world!"));
 		}
 
-		[Test]
+		// TODO: Turn this into an integration test
+		//[Test]
 		public void Test_Echo_Publish()
 		{
 			var echo = new ipfsEcho ();
