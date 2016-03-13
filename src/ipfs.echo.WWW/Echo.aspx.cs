@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI;
-using ipfsecho.Core;
+using ipfs.echo.Core;
 
 namespace ipfs.echo.WWW
 {

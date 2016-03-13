@@ -1,5 +1,6 @@
 ﻿using System;
 using ipfsecho.Core;
+using ipfs.echo.Core;
 
 namespace ipfsecho.ConsoleUI
 {

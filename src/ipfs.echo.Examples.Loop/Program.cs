@@ -1,6 +1,7 @@
 ﻿using System;
 using ipfsecho.Core;
 using System.Threading;
+using ipfs.echo.Core;
 
 namespace ipfs.echo.Examples.Loop
 {
