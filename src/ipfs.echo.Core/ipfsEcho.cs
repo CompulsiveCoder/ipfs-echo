@@ -3,7 +3,7 @@ using System.IO;
 using ipfs.Core;
 using ipfs.Managed;
 
-namespace ipfsecho.Core
+namespace ipfs.echo.Core
 {
 	public class ipfsEcho
 	{
