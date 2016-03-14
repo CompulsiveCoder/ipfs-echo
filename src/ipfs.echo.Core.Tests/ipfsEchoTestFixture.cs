@@ -1,9 +1,10 @@
 ﻿using System;
 using NUnit.Framework;
 using System.Threading;
+using ipfs.echo.Core;
 using ipfs.Core.Tests;
 
-namespace ipfsecho.Core.Tests
+namespace ipfs.echo.Core.Tests
 {
 	[TestFixture]
 	public class ipfsEchoTestFixture : BaseTestFixture
