@@ -1,5 +1,7 @@
 DIR=$PWD
 
+echo "Initializing ipfs-echo project"
+
 cd mod/ipfs-cs/
 sh init.sh
 cd $DIR
