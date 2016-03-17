@@ -23,5 +23,7 @@ then
   echo "The 'master' branch has been graduated to the 'stable' branch" || \
 
   echo "Error"
+else
+  echo "You must be in the 'master' branch to graduate to the 'stable' branch."
 fi
 date
