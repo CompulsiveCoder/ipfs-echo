@@ -2,5 +2,12 @@ sudo: required
 
 language: c#
 
+services:
+- docker
+
+env:
+  - TEST_SUITE=Unit
+  - TEST_SUITE=Integration
+
 script:
-- curl https://raw.githubusercontent.com/CompulsiveCoder/ipfs-echo/$TRAVIS_BRANCH/prepare-and-test-from-github.sh | sh -s $TRAVIS_BRANCH
+- sh prepare-and-test.sh $TEST_SUITE

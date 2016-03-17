@@ -3,25 +3,27 @@ using NUnit.Framework;
 using System.Threading;
 using ipfs.echo.Core;
 using ipfs.Core.Tests;
+using ipfs.Core.Tests.Integration;
+using ipfs.Core;
 
 namespace ipfs.echo.Core.Tests
 {
-	[TestFixture]
-	public class ipfsEchoTestFixture : BaseTestFixture
+	[TestFixture(Category="Integration")]
+	public class ipfsEchoIntegrationTestFixture : BaseIntegrationTestFixture
 	{
-		[Test]
-		public void Test_Echo()
+		// TODO: Overhaul this test and re-enable
+		//[Test]
+		public void Test_Publish()
 		{
-			var echo = new ipfsEcho ();
-			Console.WriteLine(echo.Echo ("Hello world!"));
+			new DockerTestLauncher ().Launch (this);
 		}
 
-		// TODO: Turn this into an integration test
-		//[Test]
-		public void Test_Echo_Publish()
+		public override void Execute()
 		{
+
 			var echo = new ipfsEcho ();
 			echo.IsVerbose = true;
+			echo.Init ();
 				
 			var firstString = "one";
 

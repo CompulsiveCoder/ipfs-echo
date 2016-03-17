@@ -9,8 +9,17 @@ namespace ipfs.echo.Core
 	{
 		public bool IsVerbose = false;
 
+		public ipfsManagedClient Client;
+
 		public ipfsEcho ()
 		{
+			Client = new ipfsManagedClient ();
+			Client.IsVerbose = true;
+		}
+
+		public void Init()
+		{
+			Client.Init ();
 		}
 
 		public string Echo(string text)
@@ -85,17 +94,15 @@ namespace ipfs.echo.Core
 
 		public string EchoPublish(string text, string ipnsSubFolder, string fileName, bool replaceContent)
 		{
-			var managedClient = new ipfsManagedClient ();
-			managedClient.IsVerbose = IsVerbose;
 
 			var hash = "";
 
 			if (replaceContent)
-				hash = managedClient.Set (ipnsSubFolder, fileName, text);
+				hash = Client.Set (ipnsSubFolder, fileName, text);
 			else
-				hash = managedClient.Append (ipnsSubFolder, fileName, text, true);
+				hash = Client.Append (ipnsSubFolder, fileName, text, true);
 
-			var peerId = managedClient.Publish (hash);
+			var peerId = Client.Publish (hash);
 
 			var url = "{0}/ipns/" + peerId + "/" + ipnsSubFolder + "/" + fileName;
 
